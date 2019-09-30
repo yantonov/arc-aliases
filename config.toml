@@ -2,8 +2,10 @@ executable="/usr/bin/arc"
 
 [alias]
 br="branch"
-pl="pr list"
-pc="!arc-create-pull-request.sh"
+ps="push"
+pl="pull"
+prl="pr list"
+prc="!arc-create-pull-request.sh"
 cm="!arc-ticket-comit.sh"
 m="!arc-mount.sh"
 ub="!arc-user-branch.sh"
