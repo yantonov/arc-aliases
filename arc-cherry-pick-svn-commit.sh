@@ -3,11 +3,11 @@ set -eu
 
 SCRIPT="$(basename "$0")"
 
-REV="$1"
+SVN_REVISION="$1"
 
-if [ -z "${REV}" ]; then
+if [ -z "${SVN_REVISION}" ]; then
     echo "Usage ${SCRIPT} svn-revision"
     exit 1
 fi
 
-arc cherry-pick "$(arc dump svn-rev ${REV})"
+arc cherry-pick "$(arc dump svn-rev ${SVN_REVISION})"
