@@ -3,7 +3,7 @@ set -eu
 
 SCRIPT="$(basename "$0")"
 
-$REV="$1"
+REV="$1"
 
 if [ -z "${REV}" ]; then
     echo "Usage ${SCRIPT} svn-revision"
