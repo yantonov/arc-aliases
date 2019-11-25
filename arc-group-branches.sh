@@ -2,4 +2,4 @@
 
 GROUP="$1"
 
-arc branches -a | sort | grep -E "^groups/.*$GROUP"
+arc branch -a | sort | grep -E "arcadia/users/.*/$GROUP.*"
