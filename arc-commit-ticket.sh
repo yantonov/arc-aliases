@@ -9,10 +9,13 @@ if [ -z "${COMMIT_MESSAGE}" ]; then
     exit 1
 fi
 
+BRANCH="$(arc branch | grep -o '^\* .*' | sed -E 's/^\* (.*)/\1/' | head -n 1 || echo "")"
+if [ "trunk" == "$BRANCH" ]; then
+    echo "You are currently at trunk. Create separate branch"
+    exit 1
+fi
 
-BRANCH="$(arc branch)"
-TICKET_NUMBER=$(echo "${BRANCH}" | grep -o '^\*.*' | sed -E 's/^\* .*\/([A-Z0-9_-]+)/\1/' | head -n 1 || echo "")
-
+TICKET_NUMBER=$(echo "${BRANCH}" | sed -E 's/^.*\/([A-Z0-9_-]+)/\1/' | head -n 1 || echo "")
 if [ -z "${TICKET_NUMBER}" ]; then
     echo 'can not detect ticket number'
     exit 1
