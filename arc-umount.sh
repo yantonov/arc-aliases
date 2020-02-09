@@ -1,4 +1,5 @@
 #!/bin/sh
 
-cd $HOME
+cd $ARC_ROOT
+
 nice arc unmount arcadia/
