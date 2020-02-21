@@ -8,4 +8,4 @@ if [ -z "${GROUP}" ]; then
 fi
 
 
-arc branch -a | sort | grep -E "arcadia/users/.*/$GROUP.*"
+arc branch -a | sort | grep -E "arcadia/users/[^/]*/$GROUP/.*"
