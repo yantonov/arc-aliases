@@ -1,4 +1,4 @@
-Arc version contol system does not support shell aliases.
+Arc version control system does not support shell aliases.
 
 This repository contains some of custom aliases to arc vcs.
 
